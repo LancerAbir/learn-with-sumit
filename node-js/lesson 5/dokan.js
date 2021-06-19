@@ -7,7 +7,7 @@ class DokanStart extends EventEmitter {
         setTimeout(() => {
             this.emit("openShop", {
                 taka: "taka asbe",
-                poysa: "poysa asbe",
+                poysa: "asbe poysa",
             });
         }, 1000);
     }
