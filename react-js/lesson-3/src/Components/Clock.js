@@ -13,15 +13,18 @@
 // export default Clock;
 
 import React, { Component } from "react";
+import EventsHandling from "./EventsHandling";
 
 export default class Clock extends Component {
    state = {
       data: new Date(),
-      classComponent: "Clock Class Components",
+      classComponent:
+         "Class Components, state management, componentDidMount & componentWillUnmount ",
       count: 1,
       plus: 5,
       minus: 2,
       random: 0,
+      local: "bn-BD",
    };
 
    componentDidMount() {
@@ -46,7 +49,15 @@ export default class Clock extends Component {
       });
    }
 
+   clickHandler = (e) => {
+      e.preventDefault();
+      this.setState({
+         local: "en-US",
+      });
+   };
+
    render() {
+      const { classComponent, data, count, random, local } = this.state;
       const options = {
          weekday: "long",
          year: "numeric",
@@ -55,12 +66,15 @@ export default class Clock extends Component {
       };
       return (
          <div>
-            <h2>
-               {this.state.classComponent}
-               {this.state.data.toLocaleString(this.props.local)}
-            </h2>
-            <h3>Your Roll is {this.state.count}</h3>
-            <h3>Your Random Sit Number is {this.state.random}</h3>
+            <h2>{classComponent}</h2>
+            <h3>{data.toLocaleString(local)}</h3>
+            <h4>Your Roll is {count}</h4>
+            <h4>Your Random Sit Number is {random}</h4>
+            <button type="button" onClick={this.clickHandler}>
+               button
+            </button>
+
+            <EventsHandling />
          </div>
       );
    }
