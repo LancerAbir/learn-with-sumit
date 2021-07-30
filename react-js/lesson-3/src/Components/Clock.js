@@ -9,6 +9,7 @@ export default class Clock extends Component {
       minus: 2,
       random: 0,
       local: "bn-BD",
+      localEnglish: "en-US",
    };
 
    componentDidMount() {
@@ -33,15 +34,23 @@ export default class Clock extends Component {
       });
    }
 
-   clickHandler = (e) => {
-      e.preventDefault();
+   // clickHandler = (e) => {
+   //    e.preventDefault();
+   //    this.setState({
+   //       local: "en-US",
+   //    });
+   // };
+
+   clickHandler = (local) => {
       this.setState({
-         local: "en-US",
+         local
       });
    };
 
+
    render() {
-      const { classComponent, data, count, random, local } = this.state;
+      const { classComponent, data, count, random, local, localEnglish } =
+         this.state;
       const options = {
          weekday: "long",
          year: "numeric",
@@ -60,8 +69,9 @@ export default class Clock extends Component {
             <h3>{data.toLocaleString(local)}</h3>
             <h4>Your Roll is {count}</h4>
             <h4>Your Random Sit Number is {random}</h4>
-            <button type="button" onClick={this.clickHandler}>
-               button
+            
+            <button type="button" onClick={() => this.clickHandler()}>
+               toggle button
             </button>
          </div>
       );
