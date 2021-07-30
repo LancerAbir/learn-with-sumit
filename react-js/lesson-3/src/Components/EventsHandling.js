@@ -14,7 +14,7 @@ export default class EventsHandling extends Component {
       }));
    };
 
-   // component re-render হবে কিনা বা update হবে নাকি হবে না
+   // component re-render হবে কিনা  বা update হবে নাকি হবে না
    shouldComponentUpdate(nextProps, nextState) {
       const { changeStateNumber: currentChange } = this.state;
       const { changeStateNumber: nextChange } = nextState;
@@ -28,7 +28,12 @@ export default class EventsHandling extends Component {
       const { changeStateNumber } = this.state;
       return (
          <div>
-            <h2>Events Handling </h2>
+            <h2>Lesson 8 - Events Handling </h2>
+            <ul>
+               <li>component re-render হবে কিনা --> shouldComponentUpdate()</li>
+               <li>this keyword এর ব্যাবহার</li>
+            </ul>
+
             <p>current number {changeStateNumber}</p>
             <Button clickHandler={this.clickHandler} />
          </div>

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Clock from "./Components/Clock";
+import ConditionalRendering from "./Components/ConditionalRendering";
+import EventsHandling from "./Components/EventsHandling";
 import Test from "./Components/Test";
 
 function App() {
@@ -12,6 +14,9 @@ function App() {
          <p>=======================================</p>
          <Clock local="bn-BD" number={state} />
          <p>=======================================</p>
+         <EventsHandling />
+         <p>=======================================</p>
+         <ConditionalRendering />
       </div>
    );
 }

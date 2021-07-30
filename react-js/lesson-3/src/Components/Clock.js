@@ -1,25 +1,9 @@
-// import React from "react";
-
-// const Clock = ({ local }) => {
-//    return (
-//       <div>
-//          <h2>
-//             Clock Array Functional Components {new Date().toLocaleString(local)}{" "}
-//          </h2>
-//       </div>
-//    );
-// };
-
-// export default Clock;
-
 import React, { Component } from "react";
-import EventsHandling from "./EventsHandling";
 
 export default class Clock extends Component {
    state = {
       data: new Date(),
-      classComponent:
-         "Class Components, state management, componentDidMount & componentWillUnmount ",
+      classComponent: "Lesson 7",
       count: 1,
       plus: 5,
       minus: 2,
@@ -67,14 +51,18 @@ export default class Clock extends Component {
       return (
          <div>
             <h2>{classComponent}</h2>
+            <ul>
+               <li>Class Components</li>
+               <li>state management</li>
+               <li>componentDidMount</li>
+               <li>componentWillUnmount </li>
+            </ul>
             <h3>{data.toLocaleString(local)}</h3>
             <h4>Your Roll is {count}</h4>
             <h4>Your Random Sit Number is {random}</h4>
             <button type="button" onClick={this.clickHandler}>
                button
             </button>
-
-            <EventsHandling />
          </div>
       );
    }
