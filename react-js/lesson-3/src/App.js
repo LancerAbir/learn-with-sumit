@@ -3,6 +3,7 @@ import Clock from "./Components/Clock";
 import ConditionalRendering from "./Components/ConditionalRendering";
 import EventsHandling from "./Components/EventsHandling";
 import FormHandling from "./Components/FormHandling";
+import Calculator from "./Components/Lesson 11/Calculator";
 import Test from "./Components/Test";
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
             <ConditionalRendering />
             <p>=======================================</p>
             <FormHandling />
+            <p>=======================================</p>
+            <Calculator />
+            <p>=======================================</p>
         </div>
     );
 }

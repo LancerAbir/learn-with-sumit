@@ -41,7 +41,6 @@ export default class FormHandling extends Component {
                     />
                     <p>{someText}</p>
                     <br />
-                    <br />
                     <textarea
                         name=""
                         value={text}
@@ -49,19 +48,16 @@ export default class FormHandling extends Component {
                     ></textarea>
                     <p>{text}</p>
                     <br />
-                    <br />
                     <select value={library} onChange={this.changeHandler}>
                         <option value="React"> React</option>
                         <option value="Angular"> Angular</option>
                     </select>
-                    <br />
                     <br />
                     <input
                         type="checkbox"
                         value={isCheckbox}
                         onChange={this.changeHandler}
                     />
-                    <br />
                     <br />
                     <input type="submit" value="Submit" />
                 </form>
