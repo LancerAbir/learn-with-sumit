@@ -1,28 +1,45 @@
-import React, { useState } from "react";
+import React from "react";
 
-const InputData = ({ temper }) => {
-    const [temperature, setTemperature] = useState(0);
+const InputData = ({ temper, ChangeHandler, temperature, DefaultValue }) => {
+    // celsius and fahrenheit
+    const celsiusValue = (inputValue) => {
+        let results;
+        results = ((inputValue - 32) * 5) / 9;
+        return results;
+    };
 
-    const ChangeHandler = (e) => {
-        if (e.target.name === "sobita") {
-            setTemperature(e.target.value);
+    const fahrenheitValue = (inputValue) => {
+        let results;
+        results = (inputValue * 9) / 5 + 32;
+        return results;
+    };
+
+    const toggleValue = () => {
+        if (temper === "celsius") {
+            celsiusValue(temperature);
+        } else if (temper === "fahrenheit") {
+            fahrenheitValue(temperature);
         } else {
-            console.log("Nothing");
+            console.log("Nothing toggled");
         }
     };
 
-    // celsius and fahrenheit
     return (
         <fieldset>
             <legend>
                 Egg Boil By {temper === "fahrenheit" ? "Fahrenheit" : "celsius"}{" "}
                 Temperature
             </legend>
+
             <input
                 type="text"
                 name="sobita"
-                value={temperature}
-                onChange={(e) => setTemperature(() => ChangeHandler(e))}
+                value={
+                    temper === "celsius"
+                        ? celsiusValue(temperature)
+                        : temperature
+                }
+                onChange={(e) => ChangeHandler(e)}
             />
         </fieldset>
     );

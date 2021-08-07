@@ -1,13 +1,10 @@
 import React from "react";
-import InputData from "./InputData";
+import EggBoil from "./EggBoil";
 
-const LiftingStateUp = () => {
-    // <EggBoil temperature={temperature} />
+const LiftingStateUp = ({ temperature }) => {
     return (
         <div>
-            <h2>Lesson 11 - Lifting State Up</h2>
-            <InputData temper="fahrenheit" />
-            <InputData temper="celsius" />
+            <EggBoil temperature={parseFloat(temperature)} />
         </div>
     );
 };
